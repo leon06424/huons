@@ -144,7 +144,7 @@ header{width: 100%; position: fixed; z-index: 20; top: 0;}
 
 #pc_menu_wrap .w_100p{position: relative; top: -0.1rem; height: 106px;}
 #pc_menu_wrap {text-align: center; position: relative;}
-#pc_menu_wrap .pcm_dep1{max-width: 1217px; display: flex; position: absolute; z-index: 20; font-size: 22px; justify-content: center;}
+#pc_menu_wrap .pcm_dep1{display: flex; position: absolute; z-index: 20; font-size: 22px; justify-content: center;}
 #pc_menu_wrap .pcm_dep1 > li{height: 106px; border-bottom: 3px solid transparent; transition: border-bottom 0.3s, color 0.3s; }
 #pc_menu_wrap .pcm_dep1 > li a{color: #000; font-weight: 600;}
 /* #pc_menu_wrap .pcm_dep1 > li.active a{border-bottom: 5px solid #009a6e;} */
