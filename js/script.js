@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const w_100p = document.querySelector("#pc_header #pc_menu_wrap .w_100p");
 
     pcHeader.addEventListener("mouseenter", function () {
-        // pc_header에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 256px로 설정
-        gnbSub.style.height = "256px";
+        // pc_header에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
+        gnbSub.style.height = "230px";
     });
 
     pcHeader.addEventListener("mouseleave", function () {
@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     gnbSub.addEventListener("mouseenter", function () {
-        // gnb_sub에 마우스가 들어왔을 때, height를 256px로 유지
-        gnbSub.style.height = "256px";
+        // gnb_sub에 마우스가 들어왔을 때, height를 230px로 유지
+        gnbSub.style.height = "230px";
     });
 
     gnbSub.addEventListener("mouseleave", function () {
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     pcmDep1Items.forEach(function (item) {
         item.addEventListener("mouseenter", function () {
-        // pcm_dep1 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 256px로 설정
-        gnbSub.style.height = "256px";
+        // pcm_dep1 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
+        gnbSub.style.height = "230px";
         gnbSub.classList.add("active");
         item.classList.add("active");
         });
@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     pcmDep2Items.forEach(function (item) {
         item.addEventListener("mouseenter", function () {
-        // pcm_dep2 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 256px로 설정
-        gnbSub.style.height = "256px";
+        // pcm_dep2 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
+        gnbSub.style.height = "230px";
         gnbSub.classList.add("active");
         // 해당 li가 속한 .pcm_dep2에 'active' 클래스 추가
         const pcmDep2 = item.closest(".pcm_dep2");
