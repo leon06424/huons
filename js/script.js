@@ -5,15 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const pcmDep2Items = document.querySelectorAll(".pcm_dep2");
     const gnbSub = document.querySelector(".gnb_sub");
     const w_100p = document.querySelector("#pc_header #pc_menu_wrap .w_100p");
-    const menuBtb = document.querySelector(".menu_btb");
-
-    // menu_btb 클릭 시 gnb_sub를 토글하는 기능 추가
-    let isMenuOpen = false;
-    menuBtb.addEventListener("click", function (e) {
-        e.preventDefault(); // 기본 동작 막기
-        isMenuOpen = !isMenuOpen;
-        gnbSub.style.height = isMenuOpen ? "256px" : "0px";
-    });
 
     pcHeader.addEventListener("mouseenter", function () {
         // pc_header에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 256px로 설정
