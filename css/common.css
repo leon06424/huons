@@ -32,29 +32,14 @@ html { font-size: 62.5%; font-family: "Noto Sans KR", sans-serif; letter-spacing
     background-color: #fff;
     }
 
-.c_blue{color:#104899;}
-.c_blue_back{background-color: #104899;}
-.c_white{color: #fff;}
-.c_w{color: #fff;}
-.c_lightgray{color: #c3c3c3;}
-.c_lightgray_back{color: #c3c3c3;}
-.c_gray{color: #707070;}
-.c_gray_back{color: #707070;}
-.c_b1b1b1{color: #b1b1b1;}
-.c_fa5353{color: #fa5353;}
-.c_0fc4df{color: #0fc4df;}
-.c_49c35d{color: #49c35d;}
-.c_185c8f{color: #185c8f;}
-.c_aeefff{color: #aeefff;}
-.c_009a6e{color: #009a6e;}
-.c_043c66{color: #043c66;}
-.c_333333{color: #333333;}
-.c_464646{color: #464646;}
-.c_87ceec{color: #87ceec;}
-.c_ff8a00{color: #ff8a00;}
-.c_009a6d{color: #009a6d;}
-.c_6d6d6d{color: #6d6d6d;}
-.c_125e4d{color: #125e4d;}
+:root {
+    --main: #0049a6;
+    --sub: #0ba2de;
+    --green: #007e95;
+    --grey: #9f9f9f;
+    --purple: #4818a8;
+    --radius: 25px;
+}
 
 .b_grey{border: 1px solid #bfbfbf;}
 .border_cfcfcf{border: 1px solid #cfcfcf;}
