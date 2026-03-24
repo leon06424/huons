@@ -40,7 +40,7 @@
 <!-- header 시작 -->
 <header>
     <div id="pc_header">
-        <div class="w_1700">
+        <div class="w_1200">
             <div class="pchd_logo">
                 <a href="./index.php"><img src="./images/ico_top_logo.png" alt="㈜휴온스그룹 협력사포털"></a>
             </div>
@@ -126,17 +126,18 @@
 
                         <div class="checkbox-group">
                             <input type="checkbox" id="saveId" name="saveId">
-                            <label for="saveId">아이디저장</label>
+                            <label for="saveId" class="checkbox-box"></label>
+                            <label for="saveId" class="checkbox-label">아이디저장</label>
                         </div>
 
                         <button type="submit" class="btn btn_main">로그인</button>
 
                         <div class="footer-links">
-                            <a href="/signup">회원가입</a>
+                            <a href="./member/signup">회원가입</a>
                             <span class="divider">|</span>
-                            <a href="/find-id">아이디찾기</a>
+                            <a href="./member/find-id">아이디찾기</a>
                             <span class="divider">|</span>
-                            <a href="/find-password">비밀번호찾기</a>
+                            <a href="./member/find-password">비밀번호찾기</a>
                         </div>
                         
                     </form>
@@ -144,40 +145,94 @@
             </div>
             <!-- 로그인 전 end -->
             <!-- 로그인 후 start -->
-			<div class="case_B">
-                <ul>
-                    <li><a href="./member/mypage01.php" class="btn btn_grey">마이페이지</a></li>
-                    <li><a href="./_action/logout.php" class="btn btn_main">로그아웃</a></li>
-                </ul>
+			<div class="case_B" style="display: none;">
+                <div class="login-wrapper">
+                    <p class="profile"><img src="./images/ico_member.png" alt="profile"></p>
+                    <p class="memberTitle f_20px">
+                        <span class="member_name">에코시스템</span>님, 환영합니다.
+                    </p>
+                    <p class="memberSub f_16px">휴온스 협력사 포털</p>
+                    <hr>
+                    <div class="member_info">
+                        <p class="member_affil f_16px">소속: <span>에코시스템</span></p>
+                        <a class="member_noti f_16px" href="./member/">
+                            <img src="./images/ico_noti_on.png" alt="알림 있을 시">
+                            <!-- <img src="./images/ico_noti_off.png" alt="알림 없을 시"> -->
+                            알림 <span class="num">(7)</span></a>
+                    </div>
+                    <ul class="btnWrap">
+                        <li><a href="./member/mypage01.php" class="btn btn_main">마이페이지</a></li>
+                        <li><a href="./_action/logout.php" class="btn btn_grey">로그아웃</a></li>
+                    </ul>
+                </div>
             </div> 
             <!-- 로그인 후 end -->
         </div>
         <div class="cardWrap">
-            <a href="#" class="card">
+            <a href="#" class="card card_01">
                 <span class="card-bg"></span>
                 <div class="card-content">
-                <div class="card-title">업무<br>바로가기</div>
-                <div class="card-arrow">→</div>
+                    <div class="card-title f_18px">업무<br class="card-hover-hidden">바로가기</div>
+                    <div class="card-arrow"><img src="./images/ico_arrow_white.png" alt="더보기"></div>
+                </div>
+                <div class="card-hover">
+                    <ul>
+                        <li>
+                            <img src="./images/ico_card01_01.png" alt="icon">
+                            <p>견적</p>
+                            <div class="arrow_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/ico_card01_02.png" alt="icon">
+                            <p>입찰</p>
+                            <div class="arrow_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/ico_card01_03.png" alt="icon">
+                            <p>발주</p>
+                            <div class="arrow_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./images/ico_card01_04.png" alt="icon">
+                            <p>계약</p>
+                            <div class="arrow_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </a>
-            <a href="#" class="card">
+            <a href="#" class="card card_02">
                 <span class="card-bg"></span>
                 <div class="card-content">
-                <div class="card-title">구매<br>프로세스</div>
-                <div class="card-arrow">→</div>
+                    <div class="card-title f_18px">구매<br class="card-hover-hidden">프로세스</div>
+                    <div class="card-arrow"><img src="./images/ico_arrow_white.png" alt="더보기"></div>
                 </div>
             </a>
             <a href="#" class="card wide">
                 <span class="card-bg"></span>
                 <div class="card-content">
-                <div class="card-title">ESG경영</div>
-                <div class="card-desc">
-                    휴온스의 가치를 사회소문<br>
-                    사회에 긍정적이고 지속적인 변화를 함께 만들어 갑니다.
-                </div>
-                <div class="card-arrow">→</div>
+                    <div class="card-title f_18px">ESG경영</div>
+                    <div class="card-desc f_15px">
+                        휴온스의 기술과 서비스로<br>
+                        사회에 긍정적이고 지속적인 변화를<br>
+                        함께 만들어 갑니다.
+                    </div>
+                    <div class="card-arrow"><img src="./images/ico_arrow_white.png" alt="더보기"></div>
                 </div>
             </a>
+        </div>
+        <div class="main_title">
+            <h1>
+                <span>신뢰로 연결되는</span><br>휴온스그룹 파트너포털
+            </h1>
+            <p>협력사와 함께 더 큰 가치를 만들어갑니다</p>
         </div>
     </section>
 </main>

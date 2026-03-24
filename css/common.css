@@ -124,16 +124,19 @@ section{position: relative;}
 .btn{
     width: 100%;
     height: 50px;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
     font-weight: 500;
     color: #ffffff;
     cursor: pointer;
     border: none;
     border-radius: var(--btn_radius);
-    transition: background-color 0.2s;
+    transition: filter 0.2s;
 }
 .btn:hover {
-    filter: brightness(0.8);
+    filter: brightness(1.2);
 }
 .btn_main {
     background-color: var(--main);
@@ -141,9 +144,21 @@ section{position: relative;}
 .btn_grey {
     background-color: var(--grey);
 }
+.btnWrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.btnWrap > *{
+    width: 50%;
+}
 
 /* header */
-header{width: 100%; position: fixed; z-index: 20; top: 0;}
+header{width: 100%; 
+    /* position: fixed; z-index: 20; top: 0; */
+}
 #pc_header{background-color: #fff; height: 123px; transition: transform 0.3s ease; position: relative; }
 #pc_header .pchd_logo{width: 290px; height: 123px; float: left;}
 #pc_header .pchd_logo a{height: 123px; display: flex; align-items: center; z-index: 10;}
