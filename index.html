@@ -85,8 +85,7 @@
                         </ul>
                         <ul class="pcm_dep2 gnb_sub5">
                             <li><a href="./sub/sub05/sub05_01.php">계약현황</a></li>
-                            <li><a href="./sub/sub05/sub05_02.php">계약서검토/체결</a></li>
-                            <li><a href="./sub/sub05/sub05_03.php">(전자서명)</a></li>
+                            <li><a href="./sub/sub05/sub05_02.php">계약서검토/체결<br>(전자서명)</a></li>
                         </ul>
                         <ul class="pcm_dep2 gnb_sub6">
                             <li><a href="./sub/sub06/sub06_01.php">휴온스 그룹소식</a></li>
@@ -168,55 +167,20 @@
             </div> 
             <!-- 로그인 후 end -->
         </div>
-        <div class="cardWrap">
-            <a href="#" class="card card_01">
-                <span class="card-bg"></span>
+        <div class="cardWrap shadowNone">
+            <a href="#" class="card card_01" data-target="hover1">
                 <div class="card-content">
-                    <div class="card-title f_18px">업무<br class="card-hover-hidden">바로가기</div>
-                    <div class="card-arrow"><img src="./images/ico_arrow_white.png" alt="더보기"></div>
-                </div>
-                <div class="card-hover">
-                    <ul>
-                        <li>
-                            <img src="./images/ico_card01_01.png" alt="icon">
-                            <p>견적</p>
-                            <div class="arrow_circle">
-                                <img src="./images/ico_arrow_white.png" alt="더보기">
-                            </div>
-                        </li>
-                        <li>
-                            <img src="./images/ico_card01_02.png" alt="icon">
-                            <p>입찰</p>
-                            <div class="arrow_circle">
-                                <img src="./images/ico_arrow_white.png" alt="더보기">
-                            </div>
-                        </li>
-                        <li>
-                            <img src="./images/ico_card01_03.png" alt="icon">
-                            <p>발주</p>
-                            <div class="arrow_circle">
-                                <img src="./images/ico_arrow_white.png" alt="더보기">
-                            </div>
-                        </li>
-                        <li>
-                            <img src="./images/ico_card01_04.png" alt="icon">
-                            <p>계약</p>
-                            <div class="arrow_circle">
-                                <img src="./images/ico_arrow_white.png" alt="더보기">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </a>
-            <a href="#" class="card card_02">
-                <span class="card-bg"></span>
-                <div class="card-content">
-                    <div class="card-title f_18px">구매<br class="card-hover-hidden">프로세스</div>
+                    <div class="card-title f_18px">업무<br>바로가기</div>
                     <div class="card-arrow"><img src="./images/ico_arrow_white.png" alt="더보기"></div>
                 </div>
             </a>
-            <a href="#" class="card wide">
-                <span class="card-bg"></span>
+            <a href="#" class="card card_02" data-target="hover2">
+                <div class="card-content">
+                    <div class="card-title f_18px">구매<br>프로세스</div>
+                    <div class="card-arrow"><img src="./images/ico_arrow_white.png" alt="더보기"></div>
+                </div>
+            </a>
+            <a href="#" class="card wide" data-target="hover3">
                 <div class="card-content">
                     <div class="card-title f_18px">ESG경영</div>
                     <div class="card-desc f_15px">
@@ -227,12 +191,166 @@
                     <div class="card-arrow"><img src="./images/ico_arrow_white.png" alt="더보기"></div>
                 </div>
             </a>
+
+            <!-- hover시 .on 붙음 -->
+            <div class="card-hover hover1">
+                <div class="card-title f_18px">업무 바로가기</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p class="iconBox"><img src="./images/ico_card01_01.png" alt="icon"></p>
+                            <p class="f_18px">견적</p>
+                            <div class="icon_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconBox"><img src="./images/ico_card01_02.png" alt="icon"></p>
+                            <p class="f_18px">입찰</p>
+                            <div class="icon_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconBox"><img src="./images/ico_card01_03.png" alt="icon"></p>
+                            <p class="f_18px">발주</p>
+                            <div class="icon_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconBox"><img src="./images/ico_card01_04.png" alt="icon"></p>
+                            <p class="f_18px">계약</p>
+                            <div class="icon_circle">
+                                <img src="./images/ico_arrow_white.png" alt="더보기">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-hover hover2">
+                <div class="card-title f_18px">구매프로세스 바로가기</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p class="icon_circle"><img src="./images/ico_card02_01.png" alt="icon"></p>
+                            <p class="f_17px">회원가입</p>
+                            <div class="plus">
+                                +
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="icon_circle"><img src="./images/ico_card02_02.png" alt="icon"></p>
+                            <p class="f_17px">견적절차</p>
+                            <div class="plus">
+                                +
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="icon_circle"><img src="./images/ico_card02_03.png" alt="icon"></p>
+                            <p class="f_17px">입찰절차</p>
+                            <div class="plus">
+                                +
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="icon_circle"><img src="./images/ico_card02_04.png" alt="icon"></p>
+                            <p class="f_17px">발주접수</p>
+                            <div class="plus">
+                                +
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="icon_circle"><img src="./images/ico_card02_05.png" alt="icon"></p>
+                            <p class="f_17px">계약체결</p>
+                            <div class="plus">
+                                +
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-hover hover3">
+                <div class="card-title f_18px">ESG경영</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="iconImg"><img src="./images/ico_card03_01.png" alt="icon"></div>
+                            <p class="f_17px">상생경영</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="iconImg"><img src="./images/ico_card03_02.png" alt="icon"></div>
+                            <p class="f_17px">인권경영</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="iconImg"><img src="./images/ico_card03_03.png" alt="icon"></div>
+                            <p class="f_17px">윤리경영</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="iconImg"><img src="./images/ico_card03_04.png" alt="icon"></div>
+                            <p class="f_17px">사회공헌</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="main_title">
-            <h1>
+        <div class="main_title shadowNone">
+            <h1 class="f_47px">
                 <span>신뢰로 연결되는</span><br>휴온스그룹 파트너포털
             </h1>
-            <p>협력사와 함께 더 큰 가치를 만들어갑니다</p>
+            <p class="f_22px">협력사와 함께 더 큰 가치를 만들어갑니다</p>
+        </div>
+    </section>
+
+    <section id="row2" class="w_1200">
+        <div id="notice">
+            <div class="title">
+                <p class="f_17px">공지사항</p>
+                <a href="#" class="f_17px">더보기 +</a>
+            </div>
+            <ul id="list">
+                <li>
+                    <a href="#">
+                        <span class="list_alarm noti"></span>
+                        <div class="subject">발신 전용메일 사칭메일 주의 안내 건</div>
+                        <p class="date">2026-03-05</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="list_alarm new"></span>
+                        <div class="subject">[안내] 협력사 대안 지원 신청 공지 안내합니다.</div>
+                        <p class="date">2026-03-03</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="list_alarm"></span>
+                        <div class="subject">발신 전용메일 사칭메일 주의 안내 건</div>
+                        <p class="date">2026-02-23</p>
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
 </main>

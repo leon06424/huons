@@ -105,3 +105,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+//메인 업무바로가기, 구매프로세스, ESG경영 카드
+$(function () {
+
+    // 카드 hover
+    $('.card').on('mouseenter', function (e) {
+        e.preventDefault(); // 🔥 a태그 방지
+
+        const target = $(this).data('target');
+
+        $('.card-hover').removeClass('on');
+        $('.card-hover.' + target).addClass('on');
+    });
+
+    // 🔥 cardWrap 벗어나면만 제거
+    $('.cardWrap').on('mouseleave', function () {
+        $('.card-hover').removeClass('on');
+    });
+
+});
