@@ -163,7 +163,7 @@ header{width: 100%;
 }
 #pc_header{background-color: #fff; height: 123px; transition: transform 0.3s ease; position: relative; }
 #pc_header .pchd_logo{width: 290px; height: 123px; float: left;}
-#pc_header .pchd_logo a{height: 123px; display: flex; align-items: center; z-index: 10;}
+#pc_header .pchd_logo a{height: 123px; display: flex; align-items: center; position: absolute; z-index: 10;}
 #pc_header .pchd_logo a img{object-fit: contain;}
 
 #pc_menu_wrap .w_100p{position: relative; top: -0.1rem; height: 123px;}
@@ -234,91 +234,54 @@ header{width: 100%;
 }
 /* footer */
 /* pc */
-#footer{height: 315px; background-color: #242424; position: relative; }
-.policy_links_wrap{
-    height: 67px;
-    border-bottom: 1px solid #4d4d4d;
+#footer{
+    height: 111px; 
+    padding: 15px 0;
+    background-color: #707070; 
+    position: relative; 
 }
-.policy_links{
+#footer .f_menu{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 20px;
+    margin-bottom: 15px;
 }
-.policy_links a{
-    color: #bfbfbf;
-}
-.policy_links .bar{
-    color: #7e7e7e;
-}
-#footer .foot_wrap {height: calc(100% - 68px);}
-#footer .foot_wrap .foot{height: 100%; text-align: left; display: flex; align-items: center; justify-content: flex-start;}
-#footer .foot_wrap .foot p{font-weight: 300;}
-#footer .foot_wrap .foot p span{display: inline-block; margin-bottom: 15px;}
-.copy_txt{
-    margin-top: 15px;
-    color: #acacac;
-    font-weight: 400 !important;
-}
-#footer .foot_wrap .foot > img{margin-right: 105px;}
-#footer .foot_wrap .foot .foot_map_btn{width: 276px; display: flex; justify-content: space-between; margin-left: auto;}
-#footer .foot_wrap .foot .foot_map_btn a{display: flex; align-items: center; justify-content: center; color: #fff;}
-#footer .foot_wrap .foot .foot_map_btn a ul{display: flex; justify-content: space-around; width: 100%;}
-#footer .foot_wrap .foot .foot_map_btn .select{
-    position: relative;
-}
-#footer .foot_wrap .foot .foot_map_btn .select button{
-    width: 206px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    border: 2px solid #818181;
-    box-sizing: border-box;
-    background-color: #242424;
-    position: relative;
-    font-size: 16px;
-    color: #fff;
-    cursor: pointer;
-}
-#footer .foot_wrap .foot .foot_map_btn .select button::after{
+
+#footer .f_menu li{position: relative;}
+#footer .f_menu li::after{
     content: "";
-    width: 15px;
-    height: 8px;
-    display: flex;
     position: absolute;
-    right: 23px;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
-    background: url(/new/images/ico_arr_down_g.png) no-repeat center;
+    width: 1px;
+    height: 11px;
+    background-color: #fff;
 }
-#footer .foot_wrap .foot .foot_map_btn .select .option {
+#footer .f_menu li:nth-last-of-type(1):after{
     display: none;
-    width: 99%;
-    position: absolute;
-    bottom: 100%;           /* 버튼 바로 위에 위치 */
-    left: 0;
-    background: #fff;
-    border: 1px solid #ccc;
-    z-index: 100;
-    margin-bottom: 6px;
-    
 }
-#footer .foot_wrap .foot .foot_map_btn .select.open .option {
-    display: block;
+#footer .f_menu li a{
+    color: #fff;
+    font-size: 13px;
 }
-#footer .foot_wrap .foot .foot_map_btn .select.open .option li{
-    padding: 5px 10px;
-    border-bottom: 1px solid #eee;
+#footer .f_menu li a:hover{
+    font-weight: 500;
 }
-#footer .foot_wrap .foot .foot_map_btn .select.open .option li a{
-    color: #999;
+#footer .foot_wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
+    gap: 30px;
+}
+#footer .foot_wrap address{
+    font-size: 13px;
+    color: #fff;
+    font-style: normal;
 }
 
-.main_company_sld .swiper-slide img{width: 100%; height: 100%; object-fit: contain;}
-
-#footer .foot_wrap .foot_m{display: none;}
 
 
 /* policy 페이지 */

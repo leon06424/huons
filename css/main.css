@@ -4,6 +4,7 @@ main{
     height: 846px;
     padding-top: 60px;
     background: url(../images/main_bg.png) no-repeat bottom;
+    overflow: hidden;
 }
 main section[id^="row"]{
     width: 100%;
@@ -15,11 +16,10 @@ main section[id^="row"]{
 }
 main section[id^="row"] > div{
     height: 100%;
-    overflow: hidden;
     border-radius: var(--radius);
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.035);
 }
-main section[id^="row"] > div.shadowNone{
+main section[id^="row"] > .shadowNone{
     border-radius: 0;
     box-shadow: none;
 }
@@ -30,6 +30,7 @@ main section[id^="row"] > div.shadowNone{
 /* row1 로그인 박스 */
 #login{
     width: 351px;
+    overflow: hidden;
 }
 #login > div{
     height: 100%;
@@ -249,9 +250,9 @@ main section[id^="row"] > div.shadowNone{
 }
 
 /* 기본 배경 */
-.card:nth-child(1) { background: #0d47a1; }
-.card:nth-child(2) { background: #0ba2de; }
-.card:nth-child(3) { background: #007e95; }
+.card:nth-child(1) { background: var(--main); }
+.card:nth-child(2) { background: var(--sub); }
+.card:nth-child(3) { background: var(--green); }
 
 .card.wide {
     grid-column: span 2;
@@ -297,19 +298,19 @@ main section[id^="row"] > div.shadowNone{
 .card-hover.hover1 {
     top: 0;
     left: 0;
-    background: #0d47a1;
+    background: var(--main);
 }
 .card-hover.hover2 {
     top: 0;
     right: 0;
     left: auto;
-    background: #0ba2de;
+    background: var(--sub);
 }
 .card-hover.hover3 {
     bottom: 0;
     left: 0;
     top: auto;
-    background: #007e95;
+    background: var(--green);
     width: 100%;
 }
 .card-hover ul{
@@ -444,7 +445,7 @@ main section[id^="row"] > div.shadowNone{
 .card-hover.hover3 ul li a p{
     border-radius: 50px;
     padding: 0px 20px 1px;
-    background: #007e95;
+    background: var(--green);
     color: #fff;
 }
 .card-hover.hover3 ul li a .iconImg{
@@ -461,6 +462,7 @@ main section[id^="row"] > div.shadowNone{
 #row1 .main_title h1{
     letter-spacing: -4px;
     line-height: 60px;
+    user-select: none;
 }
 #row1 .main_title h1 span{
     font-weight: 400;
@@ -468,6 +470,7 @@ main section[id^="row"] > div.shadowNone{
 #row1 .main_title p{
     letter-spacing: -1px;
     margin-top: 20px;
+    user-select: none;
 }
 
 /* row2 공지사항 */
@@ -525,6 +528,8 @@ main section[id^="row"] > div.shadowNone{
     background: url(../images/ico_list_new.png) no-repeat center;
     height: 12px;
 }
+
+/* row2 바로가기 wrap */
 #row2 #contents {
     width: 432px;
 }
@@ -536,9 +541,111 @@ main section[id^="row"] > div.shadowNone{
     gap: 11px;
 }
 #row2 #contents ul li{
-    width: 50%;
+    width: 210px;
     height: 56px;
     overflow: hidden;
-    border-radius: var(--radius);
-    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.035);
+    border-radius: 15px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.035);
+    background-color: #fff;
+}
+#row2 #contents ul li a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px 0 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+#row2 #contents ul li a p{
+    letter-spacing: -1px;
+}
+#row2 #contents ul li a .iconBox{
+    margin-top: 4px;
+    margin-right: 8px;
+}
+#row2 #contents ul li a .icon_circle{
+    margin-left: auto;
+    padding: 0;
+}
+#row2 #contents ul li a:hover .icon_circle{
+    animation: shakeX 0.5s ease;
+}
+#row2 #contents ul li a::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 15px;
+    border: 2px solid var(--main);
+    opacity: 0;
+    transition: 0.3s;
+}
+#row2 #contents ul li a:hover::after {
+    opacity: 1;
+}
+
+/* row3 */
+#row3 #process{
+    width: 100%;
+}
+#row3 #process ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+#row3 #process ul li{
+    width: 290px;
+    height: 138px;
+    overflow: hidden;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.035);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(0px);
+}
+#row3 #process ul li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+#row3 #process ul li a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 23px 35px 23px 21px;
+}
+#row3 #process ul li a .wrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    font-weight: 600;
+}
+#row3 #process ul li a .wrap .icon_circle{
+    width: 50px;
+    height: 50px;
+}
+#row3 #process ul li:nth-of-type(1) a .wrap .icon_circle{background-color: var(--main);}
+#row3 #process ul li:nth-of-type(2) a .wrap .icon_circle{background-color: var(--sub);}
+#row3 #process ul li:nth-of-type(3) a .wrap .icon_circle{background-color: var(--green);}
+#row3 #process ul li:nth-of-type(4) a .wrap .icon_circle{background-color: var(--purple);}
+#row3 #process ul li:nth-of-type(1) a .wrap p,
+#row3 #process ul li:nth-of-type(1) a h1{color: var(--main);}
+#row3 #process ul li:nth-of-type(2) a .wrap p,
+#row3 #process ul li:nth-of-type(2) a h1{color: var(--sub);}
+#row3 #process ul li:nth-of-type(3) a .wrap p,
+#row3 #process ul li:nth-of-type(3) a h1{color: var(--green);}
+#row3 #process ul li:nth-of-type(4) a .wrap p,
+#row3 #process ul li:nth-of-type(4) a h1{color: var(--purple);}
+#row3 #process ul li a h1{
+    width: 100%;
+    text-align: right;
+    line-height: 30px;
 }
