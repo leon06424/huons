@@ -491,6 +491,7 @@ main section[id^="row"] > div.shadowNone{
 }
 #row2 #notice .title a{
     color: var(--main);
+    font-weight: 500;
 }
 #row2 #notice #list li{
     height: 30px;
@@ -515,4 +516,29 @@ main section[id^="row"] > div.shadowNone{
 }
 #row2 #notice #list li a .list_alarm{
     width: 34px;
+}
+.list_alarm.noti{
+    background: url(../images/ico_list_noti.png) no-repeat center;
+    height: 14px;
+}
+.list_alarm.new{
+    background: url(../images/ico_list_new.png) no-repeat center;
+    height: 12px;
+}
+#row2 #contents {
+    width: 432px;
+}
+#row2 #contents ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 11px;
+}
+#row2 #contents ul li{
+    width: 50%;
+    height: 56px;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.035);
 }

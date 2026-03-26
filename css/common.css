@@ -221,8 +221,6 @@ header{width: 100%;
 .gnb .gnb5, .gnb_sub5{width:156px;}
 .gnb .gnb6, .gnb_sub6{width:156px;}
 
-.gnb_sub2 li:nth-of-type(odd){margin-bottom: 10px;}
-
 .header_banner {
     position: absolute;
     top: 50%;
