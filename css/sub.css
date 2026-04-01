@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+#sub{
+    padding: 55px 0 80px;
+}
+.tap_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.tap_top .tab_wrap{
+    width: 100%;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3px;
+    border-bottom: 2px solid var(--sub);
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+.tap_top .tab_wrap li{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #ededed;
+    flex: 0 0 auto;
+}
+.tap_top .tab_wrap li.on{
+    background-color: var(--sub);
+    color: #fff;
+}
+.tap_top .tab_wrap li.on a{
+    color: #fff;
+}
+.tap_top .tab_wrap li a{
+    width: 100%;
+    height: 100%;
+    padding: 0px 49px 0px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.tap_top .tab_wrap li .closeBtn{
+    position: absolute;
+    right: 18px;
+}
+.tab_controls{
+    width: 150px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    position: absolute;
+    right: 0;
+}
+.tab_controls button{
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border: 1px solid #b2b8c9;
+    border-radius: 3px;
+}
+.tab_controls .tab_close_all{
+    width: 60px;
+    font-size: 12px;
+}
+.tab_content {
+    display: none;
+}
+#sub .board_title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 36px;
+    margin-top: 50px;
+}
+#sub .board_title div{
+    display: flex;
+    align-items: center;
+}
+#sub .board_title .board_name {
+    gap: 10px;
+}
+#sub .board_title .board_name p{
+    font-size: 22px;
+    font-weight: 600;
+}
+#sub .board_title .board_name .icon_circle{
+    width: 45px;
+    height: 45px;
+    background-color: var(--main);
+}
+.search_area{
+    width: 205px;
+    gap: 6px;
+}
+.search_area a{
+    height: 40px;
+    display: flex;
+    gap: 7px;
+    font-size: 16px;
+}
+.tab_content .board_area{
+    width: 100%;
+}
+.tab_content .board_area .board_normal{
+    width: 100%;
+}
+.tab_content .board_area .board_normal tr{
+    height: 60px;
+}
+.tab_content .board_area .board_normal th{
+    background-color: #eff6ff;
+}
+.tab_content .board_area .board_normal th,
+.tab_content .board_area .board_normal td{
+    font-size: 15px;
+    font-weight: 600;
+}
+.tab_content .board_search .board_area .board_normal{
+    border-top: 1px solid #c2c2c2;
+    border-left: 1px solid #c2c2c2;
+}
+.tab_content .board_search .board_area .board_normal th,
+.tab_content .board_search .board_area .board_normal td{
+    border-right: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+    font-size: 15px;
+    font-weight: 600;
+}
+.tab_content .board_search .board_area .board_normal tr th{
+    width: 220px;
+    padding: 0 22px;
+    text-align: left;
+}
+.tab_content .board_search .board_area .board_normal td{
+    width: 380px;
+    padding: 12px 19px;
+    box-sizing: border-box;
+}
+.tab_content .board_search .board_area .board_normal td input{
+    width: 100%;
+    height: 33px;
+    border: 1px solid #c2c2c2;
+}
+.tab_content .board_search .board_area .board_normal td input[type="date"]{
+    width: 150px;
+}
+.dash{
+    width: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

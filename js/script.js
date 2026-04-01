@@ -125,3 +125,119 @@ $(function () {
     });
 
 });
+
+// 서브 탭 sub tab 이동
+document.addEventListener('DOMContentLoaded', function() {
+
+    const tabWrap = document.querySelector('.tab_wrap');
+
+    //  활성 탭 중앙으로 스크롤
+    function scrollToActiveTab() {
+        const active = document.querySelector('.tab_wrap li.on');
+        if (!active) return;
+
+        const wrapRect = tabWrap.getBoundingClientRect();
+        const activeRect = active.getBoundingClientRect();
+
+        const offset = activeRect.left - wrapRect.left - (tabWrap.clientWidth / 2) + (active.clientWidth / 2);
+        tabWrap.scrollLeft += offset;
+    }
+
+    //  탭 활성화
+    function activateTab(targetId) {
+        // li on 제거
+        document.querySelectorAll('.tab_wrap li').forEach(li => li.classList.remove('on'));
+
+        // 컨텐츠 숨김
+        document.querySelectorAll('.tab_content').forEach(con => con.style.display = 'none');
+
+        // 해당 탭 찾기
+        const activeLink = document.querySelector(`.tab_wrap a[href="${targetId}"]`);
+        if (!activeLink) return;
+
+        const activeLi = activeLink.closest('li');
+        activeLi.classList.add('on');
+
+        // 컨텐츠 표시
+        const target = document.querySelector(targetId);
+        if (target) target.style.display = 'block';
+
+        // 스크롤 이동
+        scrollToActiveTab();
+    }
+
+    //  탭 클릭
+    document.querySelectorAll('.tab_wrap li a').forEach(tab => {
+        tab.addEventListener('click', function(e) {
+
+            // 닫기 버튼 클릭이면 무시
+            if (e.target.classList.contains('closeBtn')) return;
+
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            activateTab(targetId);
+        });
+    });
+
+    //  개별 닫기 (X)
+    document.querySelectorAll('.closeBtn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const li = this.closest('li');
+
+            // 활성 탭이면 옆 탭으로 이동
+            if (li.classList.contains('on')) {
+                let next = li.nextElementSibling || li.previousElementSibling;
+
+                if (next) {
+                    const link = next.querySelector('a');
+                    activateTab(link.getAttribute('href'));
+                } else {
+                    // 남은 탭 없으면 컨텐츠 전체 숨김
+                    document.querySelectorAll('.tab_content').forEach(con => con.style.display = 'none');
+                }
+            }
+
+            li.remove();
+        });
+    });
+
+    //  이전 버튼
+    document.querySelector('.tab_prev').addEventListener('click', function() {
+        const current = document.querySelector('.tab_wrap li.on');
+        if (!current) return;
+
+        const prev = current.previousElementSibling;
+        if (!prev) return;
+
+        const link = prev.querySelector('a');
+        activateTab(link.getAttribute('href'));
+    });
+
+    //  다음 버튼
+    document.querySelector('.tab_next').addEventListener('click', function() {
+        const current = document.querySelector('.tab_wrap li.on');
+        if (!current) return;
+
+        const next = current.nextElementSibling;
+        if (!next) return;
+
+        const link = next.querySelector('a');
+        activateTab(link.getAttribute('href'));
+    });
+
+    //  전체 닫기
+    document.querySelector('.tab_close_all').addEventListener('click', function() {
+        document.querySelectorAll('.tab_wrap li').forEach(li => li.remove());
+        document.querySelectorAll('.tab_content').forEach(con => con.style.display = 'none');
+    });
+
+    //  초기 실행 (처음 on 탭 보여주기)
+    const first = document.querySelector('.tab_wrap li.on a');
+    if (first) {
+        activateTab(first.getAttribute('href'));
+    }
+});
