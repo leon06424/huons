@@ -121,11 +121,23 @@
 }
 .tab_content .board_area .board_normal th{
     background-color: #eff6ff;
+    padding: 0 20px;
 }
 .tab_content .board_area .board_normal th,
 .tab_content .board_area .board_normal td{
     font-size: 15px;
     font-weight: 600;
+}
+.tab_content .board_area .board_normal td{
+    padding: 0 10px;
+}
+.tab_content .board_area .board_normal td input{
+    width: 100%;
+    height: 33px;
+    border: 1px solid #c2c2c2;
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-size: 15px;
 }
 .tab_content .board_search .board_area .board_normal{
     border-top: 1px solid #c2c2c2;
@@ -148,11 +160,6 @@
     padding: 12px 19px;
     box-sizing: border-box;
 }
-.tab_content .board_search .board_area .board_normal td input{
-    width: 100%;
-    height: 33px;
-    border: 1px solid #c2c2c2;
-}
 .tab_content .board_search .board_area .board_normal td input[type="date"]{
     width: 150px;
 }
@@ -166,4 +173,53 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.date input[type="date"] {
+    padding-right: 40px;
+    height: 40px;
+    position: relative;
+}
+/* 기본 캘린더 아이콘 숨기기 (크롬 기준) */
+.date input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+/* 커스텀 아이콘 */
+.date input[type="date"]::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 31px;
+    height: 32px;
+    background: url(/images/ico_calendar.png) no-repeat center / contain;
+    background-color: var(--sub);
+    background-size: 17px 17px;
+    pointer-events: none;
+    border-left: 1px solid #c2c2c2;
+}
+.tab_content .board_list .board_area .board_normal th{
+    position: relative;
+}
+.tab_content .board_list .board_area .board_normal th::after{
+    content: "";
+    display: flex;
+    width: 1px;
+    height: 18px;
+    background-color: #858585;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tab_content .board_list .board_area .board_normal th:nth-last-of-type(1)::after{
+    display: none;
+}
+.tab_content .board_list .board_area .board_normal tr:not(:first-of-type){
+    border-bottom: 1px solid #c8c8c8;
 }

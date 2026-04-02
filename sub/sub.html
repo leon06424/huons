@@ -200,7 +200,7 @@
                     <table class="board_normal">
                         <tr>
                             <th>요청일자</th>
-                            <td>
+                            <td class="date">
                                 <input type="date" value="2026-02-08">
                                 <span class="dash">-</span>
                                 <input type="date" value="2026-03-08">
@@ -235,6 +235,20 @@
             <div class="board_list">
                 <div class="board_area">
                     <table class="board_normal">
+                        <colgroup>
+                            <col width="75px">
+                            <col width="129px">
+                            <col width="98px">
+                            <col width="69px">
+                            <col width="114px">
+                            <col width="109px">
+                            <col width="97px">
+                            <col width="91px">
+                            <col width="104px">
+                            <col width="100px">
+                            <col width="101px">
+                            <col width="102px">
+                        </colgroup>
                         <tr>
                             <th>버튼</th>
                             <th>견적요청법인</th>
@@ -249,6 +263,11 @@
                             <th>결제조건</th>
                             <th>담당자</th>
                         </tr>
+                        <!-- 검색결과가 없을 시 start -->
+                        <tr>
+                            <td colspan="12"><p class="f_16px" style="text-align: center;">내역이 존재하지 않습니다.</p></td>
+                        </tr>
+                        <!-- 검색결과가 없을 시 end -->
                         <tr>
                             <td></td>
                             <td></td>
