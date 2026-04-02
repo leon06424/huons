@@ -197,7 +197,7 @@
     transform: translateY(-50%);
     width: 31px;
     height: 32px;
-    background: url(/images/ico_calendar.png) no-repeat center / contain;
+    background: url(../images/ico_calendar.png) no-repeat center / contain;
     background-color: var(--sub);
     background-size: 17px 17px;
     pointer-events: none;
