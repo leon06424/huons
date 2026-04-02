@@ -2,6 +2,8 @@
 
 #sub{
     padding: 55px 0 80px;
+    background: url(../images/sub_bg.png) no-repeat center;
+    background-position: center calc(100% + 115px);
 }
 .tap_top {
     display: flex;
