@@ -225,3 +225,260 @@
 .tab_content .board_list .board_area .board_normal tr:not(:first-of-type){
     border-bottom: 1px solid #c8c8c8;
 }
+
+/* 회원가입 */
+/* join01 */
+.step {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+.step::after{
+    content: "";
+    display: flex;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    background: #e7eff7;
+}
+.step li {
+    position: relative;
+    width: 240px;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    background: #e7eff7;
+    font-size: 19px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 1px solid #c7c7c7;
+    border-right: none;
+    color: #6d6e6e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+/* 화살표 */
+.step li::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -17px; /* 화살 길이 */
+    background: url(../images/step_arrow.png) no-repeat center;
+    width: 17px;
+    height: 52px;
+    z-index: 1;
+}
+.step li:first-child::before {
+    display: none;
+}
+.step li.active {
+    width: 224px;
+    background: #2aa7df;
+    color: #fff;
+}
+.step li.active::after {
+    background: url(../images/step_arrow_active.png) no-repeat center;
+}
+.step strong{
+    font-size: 22px;
+}
+fieldset{
+    border: 0;
+}
+legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+input[type="radio"] {
+    accent-color: var(--main);
+    width: 17px;
+    height: 17px;
+}
+input[type="radio"] + label{
+    font-size: 15px;
+    color: #6d6d6d;
+    cursor: pointer;
+}
+.input_box{
+    width: 400px;
+    height: 50px;
+    border: 1px solid #d1d1d1;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+.input_box::placeholder{
+    color: #6d6d6d;
+}
+.notice_txt{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 25px;
+}
+.notice_txt::before{
+    content: "";
+    width: 18px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/ico_bang.png) no-repeat center;
+}
+.notice_txt span{
+    color: var(--main);
+    margin-left: 5px;
+}
+.join01 .board_contents .d-flex{
+    gap: 15px;
+}
+.join01 .board_contents ul li{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.join01 .board_contents ul li:nth-child(1){
+    margin-right: 15px;
+}
+.join01 .board_contents ul.d-flex{
+    margin-bottom: 25px;
+}
+#board .board_contents.last {
+    padding-bottom: 45px;
+    border-bottom: 1px solid #c8c8c8;
+    margin-bottom: 30px;
+}
+.board_contents ~ .btn_wrap{
+    display: flex;
+    justify-content: right;
+    gap: 6px;
+}
+.board_contents ~ .btn_wrap .btn{
+    width: 100px;
+    height: 40px;
+}
+/* join02 */
+.terms_box .terms_content{
+    height: 297px;
+    border: 1px solid #d1d1d1;
+    overflow-y: auto;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000;
+}
+#board .checkbox-group .checkbox-label{
+    font-size: 15px;
+    color: #000000;
+}
+/* join03 */
+.join_table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #000;
+}
+.join_table th,
+.join_table td {
+    height: 60px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid #c2c2c2;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+.join_table th {
+    background: #eff6ff;
+    text-align: left;
+    padding: 10px 25px;
+    font-weight: 700;
+}
+.join_table input,
+.join_table select {
+    width: 100%;
+    height: 33px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    border: 1px solid #c2c2c2;
+    background: #fff;
+}
+/* 필수값 */
+.join_table input:required,
+.join_table select:required  {
+    background: #fffbf1;
+}
+/* 수정 불가 + 값 있음 */
+.join_table input[readonly],
+.join_table input[disabled] {
+    background: #f4f4f4;
+    color: #000000;
+}
+
+.flex {
+    display: flex;
+    gap: 8px;
+}
+.flex button {
+    padding: 0 12px;
+    background: #a1a1a1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.file-input {
+    position: absolute;
+    left: -9999px;
+}
+.download-btn{
+    background-color: #1aa9e2 !important;
+}
+.preview-box {
+    width: 235px;
+    height: 220px;
+    border: 1px solid #c2c2c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: #aaaaaa;
+    margin-bottom: 15px;
+}
+.preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.join03 .btn_wrap,
+.join04 .btn_wrap{
+    margin-top: 55px;
+}
+input[name="status"]::placeholder{
+    color: #000;
+}
+.join04 .join_table th{
+    text-align: center;
+}
+.join04 .join_table thead th:not(.table_title){
+    background-color: #f3f3f3;
+}

@@ -241,3 +241,83 @@ document.addEventListener('DOMContentLoaded', function() {
         activateTab(first.getAttribute('href'));
     }
 });
+
+// 회원가입 전체동의 체크, 개별체크 전부 하면 전체동의 체크
+document.addEventListener('DOMContentLoaded', function(){
+
+    const allAgree = document.getElementById('all_agree');
+    const checkboxes = document.querySelectorAll('#board .board_contents input[type="checkbox"]');
+
+    // 전체동의 클릭
+    allAgree.addEventListener('change', function(){
+        checkboxes.forEach(chk => {
+            chk.checked = allAgree.checked;
+        });
+    });
+
+    // 개별 체크 클릭
+    checkboxes.forEach(chk => {
+        chk.addEventListener('change', function(){
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('#board .board_contents input[type="checkbox"]:checked').length;
+
+            allAgree.checked = (total === checked);
+        });
+    });
+
+});
+
+// 회원가입 join03 파일첨부
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.join_table .flex').forEach(function (wrap) {
+        const btn = wrap.querySelector('.upload-btn');
+        const fileInput = wrap.querySelector('input[type="file"]');
+        const textInput = wrap.querySelector('input[type="text"]');
+
+        // ⭐ null 체크
+        if (!btn || !fileInput || !textInput) return;
+
+        btn.addEventListener('click', function () {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function () {
+            if (this.files.length > 0) {
+                textInput.value = this.files[0].name;
+            }
+        });
+    });
+});
+// 명함 이미지 썸네일 미리보기
+document.querySelectorAll('.card-upload').forEach(function (wrap) {
+    const btn = wrap.querySelector('.upload-btn');
+    const fileInput = wrap.querySelector('.file-input');
+    const textInput = wrap.querySelector('input[type="text"]');
+    const img = wrap.querySelector('.preview-img');
+    const placeholder = wrap.querySelector('.placeholder');
+
+    if (!btn || !fileInput) return;
+
+    // 버튼 클릭
+    btn.addEventListener('click', function () {
+        fileInput.click();
+    });
+
+    // 파일 선택
+    fileInput.addEventListener('change', function () {
+        const file = this.files[0];
+        if (!file) return;
+
+        // 파일명 표시
+        textInput.value = file.name;
+
+        // 이미지 미리보기
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            img.src = e.target.result;
+            img.style.display = 'block';
+            placeholder.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+    });
+});
