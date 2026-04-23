@@ -40,6 +40,7 @@ html { font-size: 62.5%; font-family: "Noto Sans KR", sans-serif; letter-spacing
 :root {
     --main: #0049a6;
     --sub: #0ba2de;
+    --bsub: #1aa9e2;
     --green: #007e95;
     --grey: #9f9f9f;
     --purple: #4818a8;
@@ -81,6 +82,7 @@ html { font-size: 62.5%; font-family: "Noto Sans KR", sans-serif; letter-spacing
 .f_light{font-weight: 400 !important;}
 
 .c_main{color: var(--main)}
+.c_bsub{color: var(--bsub)}
 
 .d-flex{display: -ms-flexbox !important; display: flex !important;}
 .justify-content-center {-ms-flex-pack: center !important; justify-content: center !important; }
@@ -148,6 +150,11 @@ section{position: relative;}
 .btn_grey {
     background-color: var(--grey);
 }
+.btn_grey_border {
+    border: 1px solid var(--grey) !important;
+    background-color: #fff !important;
+    color: #858585 !important;
+}
 .btnWrap{
     width: 100%;
     display: flex;
@@ -157,6 +164,11 @@ section{position: relative;}
 }
 .btnWrap > *{
     width: 50%;
+}
+.btn .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hidden{
@@ -177,7 +189,10 @@ header{width: 100%;
 #pc_menu_wrap .pcm_dep1{display: flex; position: absolute; 
     /* left: 650px;  */
     right: 315px;
-    z-index: 20; font-size: 20px; justify-content: center;}
+    z-index: 20; font-size: 20px; 
+    /* justify-content: center; */
+    justify-content: flex-end;
+}
 #pc_menu_wrap .pcm_dep1 > li{height: 123px; border-bottom: 0px solid transparent; transition: border-bottom 0.3s, color 0.3s; }
 #pc_menu_wrap .pcm_dep1 > li a{color: #000; font-weight: 600;}
 #pc_menu_wrap .pcm_dep1 > li.active a {
@@ -199,7 +214,10 @@ header{width: 100%;
 
 #pc_menu_wrap .gnb_sub{width: 100%; height: 0; background-color: #fff; position: absolute; top: 123px;  z-index: 10; transition: height 0.3s ease-in-out; overflow: hidden; font-size: 16px;  border-top: 1px solid #d4d4d4;}
 #pc_menu_wrap .gnb_sub.active{ border-bottom: 1px solid #d4d4d4; box-shadow: 0 10px 0px rgba(0, 0, 0, 0.13);}
-#pc_menu_wrap .gnb_sub .pcm_dep2_wrap{display: flex; height: 100%; justify-content: center; position: absolute; 
+#pc_menu_wrap .gnb_sub .pcm_dep2_wrap{display: flex; height: 100%; 
+    /* justify-content: center; */
+    justify-content: flex-end;
+    position: absolute; 
     /* left: 650px; */
     right: 315px;
 }

@@ -156,10 +156,10 @@
     <div class="w_1200">
         <div class="tap_top">
             <ul class="tab_wrap">
-                <li class="on">
+                <li>
                     <a href="#tab01" class="f_16px">견적접수<span class="f_14px closeBtn">×</span></a>
                 </li>
-                <li>
+                <li class="on">
                     <a href="#tab02" class="f_16px">견적현황<span class="f_14px closeBtn">×</span></a>
                 </li>
                 <li>
@@ -180,13 +180,12 @@
             </div>
         </div>
 
-        <!-- 견적접수 start -->
-        <div id="tab01" class="tab_content">
+        <!-- 견적제출현황 start -->
+        <div id="tab02" class="tab_content">
             <!-- 검색창 start -->
-            <div class="board_title">
+            <div class="board_title board_top_title">
                 <div class="board_name">
-                    <p class="icon_circle"><img src="../images/ico_list_top.png" alt="icon"></p>
-                    <p class="f_22px">견적접수</p>
+                    <p class="f_26px">견적제출현황</p>
                 </div>
                 <form method="get" name="Search">
                     <div class="search_area">
@@ -229,9 +228,12 @@
                             <th>진행상태</th>
                             <td>
                                 <select name="status" id="status">
-                                    <option value="">요청</option>
                                     <option value="">접수</option>
-                                    <option value="">조정요청</option>
+                                    <option value="">제출</option>
+                                    <option value="">검토중</option>
+                                    <option value="">수정제출</option>
+                                    <option value="">선정</option>
+                                    <option value="">탈락</option>
                                 </select>
                             </td>
                         </tr>
@@ -244,58 +246,81 @@
             <div class="board_title">
                 <div class="board_name">
                     <p class="icon_circle"><img src="../images/ico_list_view.png" alt="icon"></p>
-                    <p class="f_22px">요청리스트</p>
+                    <p class="f_22px">견적요청 리스트</p>
                 </div>
             </div>
             <div class="board_list">
                 <div class="board_area">
                     <table class="board_normal">
                         <colgroup>
-                            <col width="75px">
-                            <col width="129px">
-                            <col width="98px">
-                            <col width="69px">
-                            <col width="114px">
-                            <col width="109px">
-                            <col width="97px">
-                            <col width="91px">
-                            <col width="104px">
+                            <col width="90px">
+                            <col width="110px">
+                            <col width="110px">
                             <col width="100px">
-                            <col width="101px">
-                            <col width="102px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="100px">
+                            <col width="110px">
+                            <col width="80px">
                         </colgroup>
                         <tr>
-                            <th>버튼</th>
-                            <th>견적요청법인</th>
-                            <th>견적번호</th>
-                            <th>차수</th>
-                            <th>견적요청일</th>
-                            <th>제출마감일</th>
-                            <th>진행상태</th>
-                            <th>견적명</th>
-                            <th>견적유형</th>
-                            <th>견적구분</th>
+                            <th>견적진행상태</th>
+                            <th>견적요청번호</th>
+                            <th>견적서번호</th>
+                            <th>견적요청명</th>
+                            <th>요청시작일</th>
+                            <th>요청마감일</th>
+                            <th>견적요청 유형</th>
+                            <th>견적요청 구분</th>
                             <th>결제조건</th>
+                            <th>인도조건</th>
+                            <th>법인명</th>
                             <th>담당자</th>
                         </tr>
                         <!-- 검색결과가 없을 시 start -->
-                        <tr>
-                            <td colspan="12"><p class="f_16px" style="text-align: center;">조회된 데이터가 없습니다.</p></td>
-                        </tr>
+                        <!-- <tr>
+                            <td colspan="13"><p class="f_16px" style="text-align: center;">조회된 데이터가 없습니다.</p></td>
+                        </tr> -->
                         <!-- 검색결과가 없을 시 end -->
+                        
+                        <!-- 제출, 검토중, 조정요청일 때 클릭시 견적상세페이지로 이동 start-->
+                        <tr class="click-row" data-href="/sub/sub_request_view.html">
+                            <td>
+                                <a href="/sub/sub_request_view.html" class="status-link">제출</a>
+                                <!-- <a href="/sub/sub_request_view.html" class="status-link">검토중</a>
+                                <a href="/sub/sub_request_view.html" class="status-link">조정요청</a> -->
+                            </td>
+                            <td>TPQ20200319-0002</td>
+                            <td>TPQ987654</td>
+                            <td>요청이름_품목1 외 2건</td>
+                            <td>2026-04-22</td>
+                            <td>2026-05-22</td>
+                            <td>일반구매</td>
+                            <td>원부자재</td>
+                            <td>당월말 30일 현금</td>
+                            <td>납품장소도착</td>
+                            <td>휴온스</td>
+                            <td>김담당</td>
+                        </tr>
+                        <!-- 제출, 검토중, 조정요청일 때 클릭시 견적상세페이지로 이동 end-->
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                선정
+                            </td>
+                            <td>TPQ20200319-0003</td>
+                            <td>TPQ987655</td>
+                            <td>요청이름_품목1 외 2건</td>
+                            <td>2026-04-12</td>
+                            <td>2026-04-22</td>
+                            <td>일반구매</td>
+                            <td>원부자재</td>
+                            <td>당월말 25일 현금</td>
+                            <td>납품장소도착</td>
+                            <td>휴온스</td>
+                            <td>이담당</td>
                         </tr>
                     </table>
                 </div>
@@ -303,95 +328,7 @@
             <!-- 리스트 end -->
         </div>
         <!-- 견적접수 end -->
-        <!-- 견적현황 start -->
-        <div id="tab02" class="tab_content">
-            <!-- 검색창 start -->
-            <div class="board_title">
-                <div class="board_name">
-                    <p class="icon_circle"><img src="../images/ico_list_top.png" alt="icon"></p>
-                    <p class="f_22px">견적현황</p>
-                </div>
-                <form method="get" name="Search">
-                    <div class="search_area">
-                        <a href="#" class="btn btn_grey">초기화<span class="icon"><img src="../images/ico_reset.png" alt="초기화"></span></a>
-                        <a href="javascript:document.Search.submit();" class="btn btn_main">검색<span class="icon"><img src="../images/ico_search.png" alt="검색"></span></a>
-                    </div>
-                </form>
-            </div>
-            <div class="board_search">
-                <div class="board_area">
-                    <table class="board_normal">
-                        <tr>
-                            <th>요청일자</th>
-                            <td class="date">
-                                <input type="date" value="2026-02-08">
-                                <span class="dash">―</span>
-                                <input type="date" value="2026-03-08">
-                            </td>
-                            <th>견적요청법인</th>
-                            <td>
-                                <input type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>견적요청명</th>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <th>진행상태</th>
-                            <td>
-                                <input type="text">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <!-- 검색창 end -->
-            
-            <!-- 리스트 start -->
-            <div class="board_title">
-                <div class="board_name">
-                    <p class="icon_circle"><img src="../images/ico_list_view.png" alt="icon"></p>
-                    <p class="f_22px">요청리스트</p>
-                </div>
-            </div>
-            <div class="board_list">
-                <div class="board_area">
-                    <table class="board_normal">
-                        <tr>
-                            <th>버튼</th>
-                            <th>견적요청법인</th>
-                            <th>견적번호</th>
-                            <th>차수</th>
-                            <th>견적요청일</th>
-                            <th>제출마감일</th>
-                            <th>진행상태</th>
-                            <th>견적명</th>
-                            <th>견적유형</th>
-                            <th>견적구분</th>
-                            <th>결제조건</th>
-                            <th>담당자</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <!-- 리스트 end -->
-        </div>
-        <!-- 견적현황 end -->
+        
     </div>
 </section>
 <!-- content 끝 -->

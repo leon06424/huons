@@ -321,3 +321,86 @@ document.querySelectorAll('.card-upload').forEach(function (wrap) {
         reader.readAsDataURL(file);
     });
 });
+
+// 견적페이지 tr 클릭시 링크 이동
+$(document).on('click', '.click-row', function(e){
+    // a 클릭 시 중복 이동 방지
+    if($(e.target).is('a')) return;
+
+    const url = $(this).data('href');
+    if(url){
+        location.href = url;
+    }
+});
+
+// 견적페이지 파일 추가
+let fileIndex = 0;
+
+document.getElementById('addFileBtn').addEventListener('click', function () {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.name = 'files[]';
+    input.style.display = 'none';
+
+    input.addEventListener('change', function () {
+        if (this.files.length > 0) {
+            const fileName = this.files[0].name;
+
+            // 파일 표시 영역
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+
+            const span = document.createElement('span');
+            span.className = 'file-name';
+            span.textContent = fileName;
+
+            const removeBtn = document.createElement('span');
+            removeBtn.className = 'file-remove';
+            removeBtn.textContent = '✕';
+
+            // 삭제 클릭 시
+            removeBtn.addEventListener('click', function () {
+                fileItem.remove();
+                input.remove(); // 실제 input도 같이 삭제
+            });
+
+            fileItem.appendChild(span);
+            fileItem.appendChild(removeBtn);
+
+            document.getElementById('fileList').appendChild(fileItem);
+        }
+    });
+
+    document.getElementById('fileInputs').appendChild(input);
+    input.click();
+
+    fileIndex++;
+});
+
+// 견적포기 팝업
+// 열기
+document.querySelectorAll('.openModal').forEach(btn => {
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
+        document.getElementById('estimateModal').style.display = 'block';
+    });
+});
+
+// 취소 버튼 닫기
+document.querySelector('.btn-cancel').addEventListener('click', function(){
+    document.getElementById('estimateModal').style.display = 'none';
+});
+
+// 배경 클릭 시 닫기
+document.getElementById('estimateModal').addEventListener('click', function(e){
+    if(e.target === this){
+        this.style.display = 'none';
+    }
+});
+
+// ESC 눌러서 닫기 
+document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+        document.getElementById('estimateModal').style.display = 'none';
+    }
+});
