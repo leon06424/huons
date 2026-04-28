@@ -12,6 +12,16 @@ table {
     border-spacing: 0;
 }
 em {font-style: normal;}
+input{
+    width: 100%;
+    height: 33px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    border: 1px solid #c2c2c2;
+    background: #fff;
+}
 
 html { font-size: 62.5%; font-family: "Noto Sans KR", sans-serif; letter-spacing: -0.05rem;} /* 1rem = 10px */
 
@@ -44,6 +54,7 @@ html { font-size: 62.5%; font-family: "Noto Sans KR", sans-serif; letter-spacing
     --green: #007e95;
     --grey: #9f9f9f;
     --purple: #4818a8;
+    --red: #fa5353;
     --radius: 25px;
     --btn_radius: 7px;
 }
@@ -83,6 +94,7 @@ html { font-size: 62.5%; font-family: "Noto Sans KR", sans-serif; letter-spacing
 
 .c_main{color: var(--main)}
 .c_bsub{color: var(--bsub)}
+.c_red {color: var(--red);}
 
 .d-flex{display: -ms-flexbox !important; display: flex !important;}
 .justify-content-center {-ms-flex-pack: center !important; justify-content: center !important; }
@@ -170,6 +182,9 @@ section{position: relative;}
     align-items: center;
     justify-content: center;
 }
+
+.mt0{margin-top: 0 !important;}
+.mb0{margin-bottom: 0 !important;}
 
 .hidden{
     display: none;
@@ -271,7 +286,7 @@ header{width: 100%;
     position: fixed;
     right: 83px;
     top: 183px;
-    z-index: 5;
+    z-index: 9;
 }
 #quick .q_nav{
     display: flex;

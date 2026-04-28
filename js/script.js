@@ -1,107 +1,193 @@
-// 헤더
+// // 헤더
+// document.addEventListener("DOMContentLoaded", function () {
+//     const pcHeader = document.getElementById("pc_header");
+//     const pcmDep1Items = document.querySelectorAll(".pcm_dep1 li");
+//     const pcmDep2Items = document.querySelectorAll(".pcm_dep2");
+//     const gnbSub = document.querySelector(".gnb_sub");
+//     const w_100p = document.querySelector("#pc_header #pc_menu_wrap .w_100p");
+
+//     pcHeader.addEventListener("mouseenter", function () {
+//         // pc_header에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
+//         gnbSub.style.height = "230px";
+//     });
+
+//     pcHeader.addEventListener("mouseleave", function () {
+//         // pc_header에서 마우스가 떠날 때, gnb_sub를 숨기고 height를 0px로 설정
+//         gnbSub.style.height = "0px";
+//     });
+
+//     gnbSub.addEventListener("mouseenter", function () {
+//         // gnb_sub에 마우스가 들어왔을 때, height를 230px로 유지
+//         gnbSub.style.height = "230px";
+//     });
+
+//     gnbSub.addEventListener("mouseleave", function () {
+//         // gnb_sub에서 마우스가 떠날 때, height를 0px로 설정하여 숨깁니다.
+//         gnbSub.style.height = "0px";
+//     });
+
+//     pcmDep1Items.forEach(function (item) {
+//         item.addEventListener("mouseenter", function () {
+//         // pcm_dep1 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
+//         gnbSub.style.height = "230px";
+//         gnbSub.classList.add("active");
+//         item.classList.add("active");
+//         });
+
+//         item.addEventListener("mouseleave", function () {
+//         // pcm_dep1 li에서 마우스가 떠날 때, gnb_sub를 숨기고 height를 0px로 설정
+//         gnbSub.style.height = "0px";
+//         gnbSub.classList.remove("active");
+//         item.classList.remove("active");
+//         });
+//     });
+
+//     pcmDep2Items.forEach(function (item) {
+//         item.addEventListener("mouseenter", function () {
+//         // pcm_dep2 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
+//         gnbSub.style.height = "230px";
+//         gnbSub.classList.add("active");
+//         // 해당 li가 속한 .pcm_dep2에 'active' 클래스 추가
+//         const pcmDep2 = item.closest(".pcm_dep2");
+//         pcmDep2.classList.add("active");
+//         });
+
+//         item.addEventListener("mouseleave", function () {
+//         // 해당 li가 속한 .pcm_dep2_wrap에 'active' 클래스 제거
+//         const pcmDep2 = item.closest(".pcm_dep2");
+//         pcmDep2.classList.remove("active");
+//         gnbSub.classList.remove("active");
+//         });
+//     });
+
+//     const pcmDep1li = document.querySelectorAll(".pcm_dep1 > li");
+//     const pcmDep2 = document.querySelectorAll(".pcm_dep2");
+
+//     pcmDep2.forEach(function (item) {
+//         item.addEventListener("mouseenter", function () {
+//         const pcmDep1w = item.closest(".pcm_dep2_wrap");
+//         const index = Array.from(pcmDep1w.children).indexOf(item.closest("ul"));
+//         pcmDep1li[index].classList.add("active");
+//         });
+
+//         item.addEventListener("mouseleave", function () {
+//         pcmDep1li.forEach(function (dep1Item) {
+//             dep1Item.classList.remove("active");
+//         });
+//         });
+//     });
+
+//     pcmDep1li.forEach(function (item, index1) {
+//         item.addEventListener("mouseenter", function () {
+//         // 해당 li에 active 클래스 추가
+//         item.classList.add("active");
+
+//         // 연결된 pcmDep2를 찾아서 active 클래스 추가
+//         const connectedDep2 = pcmDep2[index1];
+//         connectedDep2.classList.add("active");
+//         });
+
+//         item.addEventListener("mouseleave", function () {
+//         // 해당 li에서 active 클래스 제거
+//         item.classList.remove("active");
+//         // 연결된 pcmDep2를 찾아서 active 클래스 추가
+//         const connectedDep2 = pcmDep2[index1];
+//         connectedDep2.classList.remove("active");
+//         });
+//     });
+
+//     pcmDep2.forEach(function (item) {
+//         item.addEventListener("mouseleave", function () {
+//         // 모든 pcmDep2에서 active 클래스 제거
+//         pcmDep2.forEach(function (dep2Item) {
+//             dep2Item.classList.remove("active");
+//         });
+//         });
+//     });
+// });
 document.addEventListener("DOMContentLoaded", function () {
     const pcHeader = document.getElementById("pc_header");
-    const pcmDep1Items = document.querySelectorAll(".pcm_dep1 li");
+    const pcmDep1Items = document.querySelectorAll(".pcm_dep1 > li");
     const pcmDep2Items = document.querySelectorAll(".pcm_dep2");
     const gnbSub = document.querySelector(".gnb_sub");
-    const w_100p = document.querySelector("#pc_header #pc_menu_wrap .w_100p");
 
-    pcHeader.addEventListener("mouseenter", function () {
-        // pc_header에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
-        gnbSub.style.height = "230px";
-    });
+    let isOpen = false; // 열림 상태 체크
 
-    pcHeader.addEventListener("mouseleave", function () {
-        // pc_header에서 마우스가 떠날 때, gnb_sub를 숨기고 height를 0px로 설정
-        gnbSub.style.height = "0px";
-    });
+    // 높이 계산 (딱 1번만 실행됨)
+    function setGnbHeight() {
+        const wrap = gnbSub.querySelector(".pcm_dep2_wrap");
+        const bannerLeft = gnbSub.querySelector(".header_banner.left");
+        const bannerRight = gnbSub.querySelector(".header_banner.right");
 
-    gnbSub.addEventListener("mouseenter", function () {
-        // gnb_sub에 마우스가 들어왔을 때, height를 230px로 유지
-        gnbSub.style.height = "230px";
-    });
+        const heights = [
+            wrap ? wrap.scrollHeight : 0,
+            bannerLeft ? bannerLeft.offsetHeight : 0,
+            bannerRight ? bannerRight.offsetHeight : 0
+        ];
 
-    gnbSub.addEventListener("mouseleave", function () {
-        // gnb_sub에서 마우스가 떠날 때, height를 0px로 설정하여 숨깁니다.
-        gnbSub.style.height = "0px";
-    });
+        const maxHeight = Math.max(...heights);
 
-    pcmDep1Items.forEach(function (item) {
-        item.addEventListener("mouseenter", function () {
-        // pcm_dep1 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
-        gnbSub.style.height = "230px";
+        // 60px 추가
+        gnbSub.style.height = (maxHeight + 60) + "px";
+    }
+
+    // 메뉴 열기 (한 번만 height 계산)
+    function openGnb() {
+        if (!isOpen) {
+            setGnbHeight();
+            isOpen = true;
+        }
         gnbSub.classList.add("active");
-        item.classList.add("active");
-        });
+    }
 
-        item.addEventListener("mouseleave", function () {
-        // pcm_dep1 li에서 마우스가 떠날 때, gnb_sub를 숨기고 height를 0px로 설정
+    // 메뉴 닫기
+    function closeGnb() {
         gnbSub.style.height = "0px";
         gnbSub.classList.remove("active");
-        item.classList.remove("active");
-        });
-    });
 
-    pcmDep2Items.forEach(function (item) {
+        pcmDep1Items.forEach(li => li.classList.remove("active"));
+        pcmDep2Items.forEach(ul => ul.classList.remove("active"));
+
+        isOpen = false;
+    }
+
+    // header 영역
+    pcHeader.addEventListener("mouseenter", openGnb);
+    pcHeader.addEventListener("mouseleave", closeGnb);
+
+    // gnb_sub 영역 유지
+    gnbSub.addEventListener("mouseenter", openGnb);
+    gnbSub.addEventListener("mouseleave", closeGnb);
+
+    // 1depth → 2depth 연결
+    pcmDep1Items.forEach(function (item, index) {
         item.addEventListener("mouseenter", function () {
-        // pcm_dep2 li에 마우스가 들어왔을 때, gnb_sub를 표시하고 height를 230px로 설정
-        gnbSub.style.height = "230px";
-        gnbSub.classList.add("active");
-        // 해당 li가 속한 .pcm_dep2에 'active' 클래스 추가
-        const pcmDep2 = item.closest(".pcm_dep2");
-        pcmDep2.classList.add("active");
-        });
+            openGnb();
 
-        item.addEventListener("mouseleave", function () {
-        // 해당 li가 속한 .pcm_dep2_wrap에 'active' 클래스 제거
-        const pcmDep2 = item.closest(".pcm_dep2");
-        pcmDep2.classList.remove("active");
-        gnbSub.classList.remove("active");
+            pcmDep1Items.forEach(li => li.classList.remove("active"));
+            pcmDep2Items.forEach(ul => ul.classList.remove("active"));
+
+            item.classList.add("active");
+
+            if (pcmDep2Items[index]) {
+                pcmDep2Items[index].classList.add("active");
+            }
         });
     });
 
-    const pcmDep1li = document.querySelectorAll(".pcm_dep1 > li");
-    const pcmDep2 = document.querySelectorAll(".pcm_dep2");
-
-    pcmDep2.forEach(function (item) {
+    // 2depth hover 시 1depth 활성화
+    pcmDep2Items.forEach(function (item, index) {
         item.addEventListener("mouseenter", function () {
-        const pcmDep1w = item.closest(".pcm_dep2_wrap");
-        const index = Array.from(pcmDep1w.children).indexOf(item.closest("ul"));
-        pcmDep1li[index].classList.add("active");
-        });
+            openGnb();
 
-        item.addEventListener("mouseleave", function () {
-        pcmDep1li.forEach(function (dep1Item) {
-            dep1Item.classList.remove("active");
-        });
-        });
-    });
+            pcmDep1Items.forEach(li => li.classList.remove("active"));
+            pcmDep2Items.forEach(ul => ul.classList.remove("active"));
 
-    pcmDep1li.forEach(function (item, index1) {
-        item.addEventListener("mouseenter", function () {
-        // 해당 li에 active 클래스 추가
-        item.classList.add("active");
+            item.classList.add("active");
 
-        // 연결된 pcmDep2를 찾아서 active 클래스 추가
-        const connectedDep2 = pcmDep2[index1];
-        connectedDep2.classList.add("active");
-        });
-
-        item.addEventListener("mouseleave", function () {
-        // 해당 li에서 active 클래스 제거
-        item.classList.remove("active");
-        // 연결된 pcmDep2를 찾아서 active 클래스 추가
-        const connectedDep2 = pcmDep2[index1];
-        connectedDep2.classList.remove("active");
-        });
-    });
-
-    pcmDep2.forEach(function (item) {
-        item.addEventListener("mouseleave", function () {
-        // 모든 pcmDep2에서 active 클래스 제거
-        pcmDep2.forEach(function (dep2Item) {
-            dep2Item.classList.remove("active");
-        });
+            if (pcmDep1Items[index]) {
+                pcmDep1Items[index].classList.add("active");
+            }
         });
     });
 });
@@ -111,7 +197,7 @@ $(function () {
 
     // 카드 hover
     $('.card').on('mouseenter', function (e) {
-        e.preventDefault(); // 🔥 a태그 방지
+        e.preventDefault(); // a태그 방지
 
         const target = $(this).data('target');
 
@@ -119,7 +205,7 @@ $(function () {
         $('.card-hover.' + target).addClass('on');
     });
 
-    // 🔥 cardWrap 벗어나면만 제거
+    // cardWrap 벗어나면만 제거
     $('.cardWrap').on('mouseleave', function () {
         $('.card-hover').removeClass('on');
     });
@@ -248,6 +334,9 @@ document.addEventListener('DOMContentLoaded', function(){
     const allAgree = document.getElementById('all_agree');
     const checkboxes = document.querySelectorAll('#board .board_contents input[type="checkbox"]');
 
+    // ❗ 핵심
+    if (!allAgree) return;
+
     // 전체동의 클릭
     allAgree.addEventListener('change', function(){
         checkboxes.forEach(chk => {
@@ -274,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const fileInput = wrap.querySelector('input[type="file"]');
         const textInput = wrap.querySelector('input[type="text"]');
 
-        // ⭐ null 체크
+        // null 체크
         if (!btn || !fileInput || !textInput) return;
 
         btn.addEventListener('click', function () {
@@ -334,48 +423,49 @@ $(document).on('click', '.click-row', function(e){
 });
 
 // 견적페이지 파일 추가
-let fileIndex = 0;
+const addFileBtn = document.getElementById('addFileBtn');
+const fileList = document.getElementById('fileList');
+const fileInputs = document.getElementById('fileInputs');
 
-document.getElementById('addFileBtn').addEventListener('click', function () {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.name = 'files[]';
-    input.style.display = 'none';
+if (addFileBtn && fileList && fileInputs) {
+    addFileBtn.addEventListener('click', function () {
 
-    input.addEventListener('change', function () {
-        if (this.files.length > 0) {
-            const fileName = this.files[0].name;
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.name = 'files[]';
+        input.style.display = 'none';
 
-            // 파일 표시 영역
-            const fileItem = document.createElement('div');
-            fileItem.className = 'file-item';
+        input.addEventListener('change', function () {
+            if (this.files.length > 0) {
+                const fileName = this.files[0].name;
 
-            const span = document.createElement('span');
-            span.className = 'file-name';
-            span.textContent = fileName;
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
 
-            const removeBtn = document.createElement('span');
-            removeBtn.className = 'file-remove';
-            removeBtn.textContent = '✕';
+                const span = document.createElement('span');
+                span.className = 'file-name';
+                span.textContent = fileName;
 
-            // 삭제 클릭 시
-            removeBtn.addEventListener('click', function () {
-                fileItem.remove();
-                input.remove(); // 실제 input도 같이 삭제
-            });
+                const removeBtn = document.createElement('span');
+                removeBtn.className = 'file-remove';
+                removeBtn.textContent = '✕';
 
-            fileItem.appendChild(span);
-            fileItem.appendChild(removeBtn);
+                removeBtn.addEventListener('click', function () {
+                    fileItem.remove();
+                    input.remove();
+                });
 
-            document.getElementById('fileList').appendChild(fileItem);
-        }
+                fileItem.appendChild(span);
+                fileItem.appendChild(removeBtn);
+
+                fileList.appendChild(fileItem);
+            }
+        });
+
+        fileInputs.appendChild(input);
+        input.click();
     });
-
-    document.getElementById('fileInputs').appendChild(input);
-    input.click();
-
-    fileIndex++;
-});
+}
 
 // 견적포기 팝업
 // 열기
@@ -387,20 +477,49 @@ document.querySelectorAll('.openModal').forEach(btn => {
 });
 
 // 취소 버튼 닫기
-document.querySelector('.btn-cancel').addEventListener('click', function(){
-    document.getElementById('estimateModal').style.display = 'none';
-});
+const cancelBtn = document.querySelector('.btn-cancel');
+
+if (cancelBtn) {
+    cancelBtn.addEventListener('click', function(){
+        const modal = document.getElementById('estimateModal');
+        if (modal) modal.style.display = 'none';
+    });
+}
 
 // 배경 클릭 시 닫기
-document.getElementById('estimateModal').addEventListener('click', function(e){
-    if(e.target === this){
-        this.style.display = 'none';
-    }
-});
+const modal = document.getElementById('estimateModal');
+
+if (modal) {
+    modal.addEventListener('click', function(e){
+        if(e.target === this){
+            this.style.display = 'none';
+        }
+    });
+}
 
 // ESC 눌러서 닫기 
 document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
         document.getElementById('estimateModal').style.display = 'none';
+    }
+});
+
+// 신규제품제안 view 파일첨부
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('upload-btn')) {
+        const wrap = e.target.closest('.file-upload');
+        const fileInput = wrap.querySelector('input[type="file"]');
+        fileInput.click();
+    }
+});
+
+document.addEventListener('change', function (e) {
+    if (e.target.matches('.file-upload input[type="file"]')) {
+        const wrap = e.target.closest('.file-upload');
+        const textInput = wrap.querySelector('input[type="text"]');
+
+        if (e.target.files.length > 0) {
+            textInput.value = e.target.files[0].name;
+        }
     }
 });
