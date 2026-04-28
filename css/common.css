@@ -471,3 +471,18 @@ background-color: var(--main);
 .provision table tr td:last-child{
     border-right: 0;
 }
+
+@media only screen and (max-width: 1800px) {
+    #pc_menu_wrap .pcm_dep1{
+        right: 50px;
+    }
+    #pc_menu_wrap .gnb_sub .pcm_dep2_wrap{
+        right: 50px;
+    }
+    .header_banner.left{
+        left: 50px;
+    }
+    .header_banner.right{
+        display: none;
+    }
+}
