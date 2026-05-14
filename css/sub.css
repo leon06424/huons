@@ -855,6 +855,7 @@ margin-right: 0.3rem;
     border: none;
     outline: none;
     width: 100%;
+    height: 31px;
     font-size: 12px;
 }
 /* 버튼 */
@@ -1014,4 +1015,112 @@ justify-content: right;
 .board_list_warp .btn_wrap .btn {
     width: 100px;
     height: 40px;
+}
+
+/* 계약업무 계약상세보기 */
+.contract_view{
+    gap: 30px;
+    justify-content: space-between;
+}
+.contract_view .left_wrap{
+    max-width: 600px;
+}
+.contract_view .right_wrap{
+    max-width: 570px;
+}
+.img_box {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #c2c2c2;
+    box-sizing: border-box;
+}
+.img_box img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    object-fit: contain;
+}
+
+.zoom_icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background: #888888;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.zoom_icon img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* 모달 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+}
+
+.modal .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+.contract_view .download-btn{
+    width: 23px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.contract_view .download_txt{
+    border-right: 0px !important;
+    text-align: left !important;
+}
+.memo {
+    width: 100%;
+    height: 80px;
+    padding: 10px 15px;
+    resize: vertical; /* 세로만 늘리기 */
+    border: 1px solid #ccc;
+}
+.contract_view .board_list .board_area .board_normal td{
+    padding: 13px 17px 13px 23px;
+}
+.contract_view .upload-btn{
+    width: 105px;
+}
+.contract_view .btn_wrap{
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;    
+}
+.contract_view .btn_wrap .btn{
+    width: 100px;
+    height: 38px;
+    font-size: 14px;
 }
