@@ -1124,3 +1124,29 @@ justify-content: right;
     height: 38px;
     font-size: 14px;
 }
+
+/* 납품정보등록 */
+.s_o_w.board_list .board_area .board_normal tr > *{
+    padding: 15px 15px 15px 35px;
+}
+.s_o_w.board_list .board_area .board_normal tr > * .file-name{
+    color: #000000;
+}
+.date_radio{
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.date_radio .d-flex{
+    gap: 3px;
+    margin: 0;
+    height: 34.5px;
+}
+.date_radio label{
+    color: #000000 !important;
+    font-weight: 400;
+    white-space: nowrap;
+}
+.date_radio input[type="radio"] {
+    height: 34px; 
+}

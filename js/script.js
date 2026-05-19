@@ -523,3 +523,20 @@ document.addEventListener('change', function (e) {
         }
     }
 });
+
+// 납품실적현황 radio 버튼
+document.addEventListener('DOMContentLoaded', function () {
+    const radios = document.querySelectorAll('input[name="date"]');
+    const customRadio = document.getElementById('date_custom');
+    const dateRange = document.querySelector('.custom_date_range');
+
+    radios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            if (customRadio.checked) {
+                dateRange.style.display = 'flex';
+            } else {
+                dateRange.style.display = 'none';
+            }
+        });
+    });
+});
