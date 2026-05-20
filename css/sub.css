@@ -514,6 +514,15 @@ input[name="status"]::placeholder{
 .join04 .join_table thead th:not(.table_title){
     background-color: #f3f3f3;
 }
+/* 마이페이지 mypage */
+.mypage .preview-box{
+    width: 315px;
+    height: 155px;
+    margin-bottom: 0;
+}
+.mypage td.greyBox{
+    background-color: #f3f3f3 !important;
+}
 
 /* 서브페이지 */
 .board_normal input, .board_normal select {
