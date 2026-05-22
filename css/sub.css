@@ -437,7 +437,7 @@ input[type="radio"] + label{
     font-weight: 500;
 }
 .join_table th {
-    background: #eff6ff;
+    background: #eff6ff !important;
     text-align: left;
     padding: 10px 25px;
     font-weight: 700;
@@ -1158,4 +1158,45 @@ justify-content: right;
 }
 .date_radio input[type="radio"] {
     height: 34px; 
+}
+
+/* admin 01 사용자 관리 */
+.admin .board_search{
+    margin-bottom: 110px;
+}
+.admin .contract_view .board_list .board_area .board_normal td{
+    padding: 10px 15px;
+}
+.admin .contract_view .btn_wrap .btn {
+    width: auto;
+}
+.admin .contract_view .btn_wrap .btn.btn_w_b{
+    min-width: 70px;
+}
+.admin .user_list tr:hover{
+    background-color: #f3f5fd;
+}
+.admin .user_list tr.on{
+    background-color: #f3f5fd;
+}
+.admin .menu_tit{
+    background-color: #f3f5fd;
+}
+.menu_list td{
+    padding: 10px 15px !important;
+}
+.menu_list td.menu_name a,
+.menu_list td.menu_url a{
+    display: inline-flex;
+    width: 100%;
+}
+.admin .flex button{
+    height: 33px !important;
+}
+.admin input[type="checkbox"]{
+    width: 15px !important;
+    height: 15px !important;
+}
+.admin .flex .btn_wrap{
+    margin-left: auto;
 }

@@ -540,3 +540,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+// 메뉴관리 체크 박스
+document.addEventListener('DOMContentLoaded', function () {
+    const allCheck = document.getElementById('all_check');
+    const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+
+    allCheck.addEventListener('change', function () {
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = allCheck.checked;
+        });
+    });
+});
