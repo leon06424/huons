@@ -1200,3 +1200,53 @@ justify-content: right;
 .admin .flex .btn_wrap{
     margin-left: auto;
 }
+
+/* 아이디 찾기 비밀번호 찾기 */
+.find .board_contents {
+    gap: 30px;
+    justify-content: center;
+}
+.findWrap {
+    width: 500px;
+    height: 530px;
+    padding: 50px;
+    border: 1px solid #cfcfcf;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 45px;
+}
+.findWrap fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.findWrap .title{
+    width: 100%;
+    padding-bottom: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #242424;
+    box-sizing: border-box;
+}
+.find_inputbox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+.find_inputbox ul{
+    margin: 15px 0;
+    gap: 28px;
+}
+.find_inputbox ul li{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.find_inputbox .bg_b{
+    color: #6d6d6d;
+}

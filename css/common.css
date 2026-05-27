@@ -112,6 +112,8 @@ html { font-size: 62.5%; font-family: "Noto Sans KR", sans-serif; letter-spacing
 .pc_none_1500{display: none;}
 .mob_none_1500{display: flex;}
 
+.bg_b{background-color: #f3f8ff;}
+
 #wrap{margin-top: 105px;}
 section{position: relative;}
 
